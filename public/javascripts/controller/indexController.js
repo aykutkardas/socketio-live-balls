@@ -19,12 +19,27 @@ app.controller('indexController', ['$scope', 'indexFactory', 'configFactory', ($
 		});
 	}
 
+	function bubbleLifeTime(message) {
+		var min = 500;  // min bubble life time
+		var max = 3000; // max bubble life time
+		var msPerLetter = 40; // miliseconds per letter
+		var bubbleTime;
+
+		bubbleTime = min + (message.length * msPerLetter);
+
+		if (bubbleTime > max)
+			return max;
+		else
+			return bubbleTime;
+
+	}
+
 	function showBubble(id, message) {
 		$('#'+ id).find('.message').show().html(message);
 
 		setTimeout(() => {
 			$('#'+ id).find('.message').hide();
-		}, 2000);
+		}, bubbleLifeTime(message));
 	}
 
 	async function initSocket(username) {

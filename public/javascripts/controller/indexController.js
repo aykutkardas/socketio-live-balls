@@ -20,17 +20,10 @@ app.controller('indexController', ['$scope', 'indexFactory', 'configFactory', ($
 	}
 
 	function bubbleLifeTime(message) {
-<<<<<<< HEAD
-		var min = 500;  // min bubble life time
-		var max = 3000; // max bubble life time
-		var msPerLetter = 40; // miliseconds per letter
-		var bubbleTime;
-=======
 		const min = 500;  // min bubble life time
 		const max = 3000; // max bubble life time
 		const msPerLetter = 40; // miliseconds per letter
 		let bubbleTime;
->>>>>>> 921e4a14c38ccdee6d39a8aa4ddd7e25fa6b02bb
 
 		bubbleTime = min + (message.length * msPerLetter);
 
